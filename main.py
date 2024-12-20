@@ -53,7 +53,7 @@ def main():
             hit_list = pygame.sprite.spritecollide(item, shots, True)
             
             if (len(hit_list) > 0): 
-                item.kill()
+                item.split() # modified to split from kill in 14 (CH3 - 6)
         
         
         pygame.display.flip()
