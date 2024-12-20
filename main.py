@@ -37,6 +37,11 @@ def main():
         
         for item in updatable:
             item.update(dt)
+         
+        # added in 10 (CH3 - 2)
+        for item in asteroids:
+            if item.checkcollision(player):
+                raise Exception("Game Over!")
         
         pygame.display.flip()
         
