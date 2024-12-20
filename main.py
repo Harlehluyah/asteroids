@@ -48,6 +48,14 @@ def main():
             if item.checkcollision(player):
                 raise Exception("Game Over!")
         
+        # added in 13 (CH3 - 5)
+        for item in asteroids:
+            hit_list = pygame.sprite.spritecollide(item, shots, True)
+            
+            if (len(hit_list) > 0): 
+                item.kill()
+        
+        
         pygame.display.flip()
         
         dt = clock.tick(60) / 1000
